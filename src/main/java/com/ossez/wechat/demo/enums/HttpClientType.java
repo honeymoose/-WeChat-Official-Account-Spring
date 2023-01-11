@@ -1,4 +1,4 @@
-package com.binarywang.spring.starter.wxjava.mp.enums;
+package com.ossez.wechat.demo.enums;
 
 /**
  * httpclient类型.

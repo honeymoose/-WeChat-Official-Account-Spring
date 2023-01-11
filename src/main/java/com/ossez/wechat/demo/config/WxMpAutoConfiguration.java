@@ -1,6 +1,6 @@
-package com.binarywang.spring.starter.wxjava.mp.config;
+package com.ossez.wechat.demo.config;
 
-import com.binarywang.spring.starter.wxjava.mp.properties.WxMpProperties;
+import com.ossez.wechat.demo.properties.WxMpProperties;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;

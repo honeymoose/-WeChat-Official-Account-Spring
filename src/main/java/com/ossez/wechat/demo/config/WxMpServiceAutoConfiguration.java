@@ -1,13 +1,13 @@
-package com.binarywang.spring.starter.wxjava.mp.config;
+package com.ossez.wechat.demo.config;
 
-import com.binarywang.spring.starter.wxjava.mp.enums.HttpClientType;
-import com.binarywang.spring.starter.wxjava.mp.properties.WxMpProperties;
-import me.chanjar.weixin.mp.api.WxMpService;
-import me.chanjar.weixin.mp.api.impl.WxMpServiceHttpClientImpl;
-import me.chanjar.weixin.mp.api.impl.WxMpServiceImpl;
-import me.chanjar.weixin.mp.api.impl.WxMpServiceJoddHttpImpl;
-import me.chanjar.weixin.mp.api.impl.WxMpServiceOkHttpImpl;
-import me.chanjar.weixin.mp.config.WxMpConfigStorage;
+import com.ossez.wechat.demo.enums.HttpClientType;
+import com.ossez.wechat.demo.properties.WxMpProperties;
+import com.ossez.wechat.oa.api.WxMpService;
+import com.ossez.wechat.oa.api.impl.WxMpServiceHttpClientImpl;
+import com.ossez.wechat.oa.api.impl.WxMpServiceImpl;
+import com.ossez.wechat.oa.api.impl.WxMpServiceJoddHttpImpl;
+import com.ossez.wechat.oa.api.impl.WxMpServiceOkHttpImpl;
+import com.ossez.wechat.oa.config.WxMpConfigStorage;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

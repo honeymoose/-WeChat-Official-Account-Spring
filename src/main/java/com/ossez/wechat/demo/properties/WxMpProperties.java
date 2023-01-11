@@ -1,15 +1,15 @@
-package com.binarywang.spring.starter.wxjava.mp.properties;
+package com.ossez.wechat.demo.properties;
 
-import com.binarywang.spring.starter.wxjava.mp.enums.HttpClientType;
-import com.binarywang.spring.starter.wxjava.mp.enums.StorageType;
+import com.ossez.wechat.demo.enums.HttpClientType;
+import com.ossez.wechat.demo.enums.StorageType;
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.context.properties.NestedConfigurationProperty;
 
 import java.io.Serializable;
 
-import static com.binarywang.spring.starter.wxjava.mp.enums.StorageType.Memory;
-import static com.binarywang.spring.starter.wxjava.mp.properties.WxMpProperties.PREFIX;
+import static com.ossez.wechat.demo.enums.StorageType.Memory;
+import static com.ossez.wechat.demo.properties.WxMpProperties.PREFIX;
 
 /**
  * 微信接入相关配置属性.

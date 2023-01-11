@@ -1,4 +1,4 @@
-package com.binarywang.spring.starter.wxjava.mp.properties;
+package com.ossez.wechat.demo.properties;
 
 import lombok.Data;
 

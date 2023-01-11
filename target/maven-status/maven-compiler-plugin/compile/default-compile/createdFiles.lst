@@ -1,0 +1,13 @@
+com\ossez\wechat\demo\properties\RedisProperties.class
+com\ossez\wechat\demo\properties\WxMpProperties$ConfigStorage.class
+com\ossez\wechat\demo\properties\HostConfig.class
+com\ossez\wechat\demo\enums\HttpClientType.class
+com\ossez\wechat\demo\config\WxMpServiceAutoConfiguration$1.class
+com\ossez\wechat\demo\enums\StorageType.class
+com\ossez\wechat\demo\config\WxMpAutoConfiguration.class
+com\ossez\wechat\demo\Application.class
+com\ossez\wechat\demo\config\WxMpStorageAutoConfiguration.class
+com\ossez\wechat\demo\config\WxMpStorageAutoConfiguration$1.class
+com\ossez\wechat\demo\config\WxMpServiceAutoConfiguration.class
+com\ossez\wechat\demo\properties\WxMpProperties.class
+com\ossez\wechat\demo\controller\WeChatController.class
