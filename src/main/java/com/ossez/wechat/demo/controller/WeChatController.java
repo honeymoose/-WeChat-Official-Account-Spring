@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * Batch Controller to response all batch process request
+ * WeChatController to process WeChat request
  *
  * @author YuCheng Hu
  */
@@ -19,13 +19,14 @@ import org.springframework.web.bind.annotation.RestController;
 @Slf4j
 public class WeChatController {
 
-
     @Autowired
     private WxMpService mpService;
 
-
     /**
-     * @return
+     * Get weChat access token
+     *
+     * @return The access token
+     * @throws WxErrorException WeChat API Error
      */
     @GetMapping("/token")
     @ResponseBody
