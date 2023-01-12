@@ -109,4 +109,4 @@ wx.mp.config-storage.http-proxy-password=
 
 # License
 
-[OpenAI-J is licensed under the MIT License](https://github.com/honeymoose/openai-j/blob/main/LICENSE)
+[WeChat-Official-Account-Spring is licensed under the MIT License](https://src.ossez.com/honeymoose/WeChat-Official-Account-Spring/src/branch/master/LICENSE)
