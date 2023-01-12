@@ -2,7 +2,7 @@ package com.ossez.wechat.demo.config;
 
 import com.ossez.wechat.demo.enums.StorageType;
 import com.ossez.wechat.demo.properties.RedisProperties;
-import com.ossez.wechat.demo.properties.WxMpProperties;
+import com.ossez.wechat.demo.properties.WeChatOfficialAccountProperties;
 import com.google.common.collect.Sets;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -37,7 +37,7 @@ import java.util.Set;
 public class WxMpStorageAutoConfiguration {
   private final ApplicationContext applicationContext;
 
-  private final WxMpProperties wxMpProperties;
+  private final WeChatOfficialAccountProperties wxMpProperties;
 
   @Bean
   @ConditionalOnMissingBean(WxMpConfigStorage.class)
@@ -115,8 +115,8 @@ public class WxMpStorageAutoConfiguration {
   }
 
   private void setWxMpInfo(WxMpDefaultConfigImpl config) {
-    WxMpProperties properties = wxMpProperties;
-    WxMpProperties.ConfigStorage configStorageProperties = properties.getConfigStorage();
+    WeChatOfficialAccountProperties properties = wxMpProperties;
+    WeChatOfficialAccountProperties.ConfigStorage configStorageProperties = properties.getConfigStorage();
     config.setAppId(properties.getAppId());
     config.setSecret(properties.getSecret());
     config.setToken(properties.getToken());

@@ -9,7 +9,6 @@ import org.springframework.boot.context.properties.NestedConfigurationProperty;
 import java.io.Serializable;
 
 import static com.ossez.wechat.demo.enums.StorageType.Memory;
-import static com.ossez.wechat.demo.properties.WxMpProperties.PREFIX;
 
 /**
  * 微信接入相关配置属性.
@@ -17,9 +16,8 @@ import static com.ossez.wechat.demo.properties.WxMpProperties.PREFIX;
  * @author someone
  */
 @Data
-@ConfigurationProperties(PREFIX)
-public class WxMpProperties {
-  public static final String PREFIX = "wx.mp";
+@ConfigurationProperties(prefix = "wechat.official-account")
+public class WeChatOfficialAccountProperties {
 
   /**
    * 设置微信公众号的appid.
