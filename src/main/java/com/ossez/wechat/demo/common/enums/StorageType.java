@@ -1,4 +1,4 @@
-package com.ossez.wechat.demo.enums;
+package com.ossez.wechat.demo.common.enums;
 
 /**
  * storage类型.

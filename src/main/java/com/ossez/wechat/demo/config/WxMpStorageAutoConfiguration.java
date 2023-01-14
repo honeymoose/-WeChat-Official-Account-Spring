@@ -1,6 +1,6 @@
 package com.ossez.wechat.demo.config;
 
-import com.ossez.wechat.demo.enums.StorageType;
+import com.ossez.wechat.demo.common.enums.StorageType;
 import com.ossez.wechat.demo.properties.RedisProperties;
 import com.ossez.wechat.demo.properties.WeChatOfficialAccountProperties;
 import com.google.common.collect.Sets;

@@ -1,48 +1,29 @@
 package com.ossez.wechat.demo.properties;
 
-import com.ossez.wechat.demo.enums.HttpClientType;
-import com.ossez.wechat.demo.enums.StorageType;
+
+import com.ossez.wechat.demo.common.enums.HttpClientType;
+import com.ossez.wechat.demo.common.enums.StorageType;
+import com.ossez.wechat.demo.model.entity.WeChatHost;
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.context.properties.NestedConfigurationProperty;
 
 import java.io.Serializable;
 
-import static com.ossez.wechat.demo.enums.StorageType.Memory;
+import static com.ossez.wechat.demo.common.enums.StorageType.Memory;
 
 /**
- * 微信接入相关配置属性.
- *
- * @author someone
+ * WeChat Official Account Config
+ * @author YuCheng Hu
  */
 @Data
 @ConfigurationProperties(prefix = "wechat.official-account")
 public class WeChatOfficialAccountProperties {
-
-  /**
-   * 设置微信公众号的appid.
-   */
-  private String appId;
-
-  /**
-   * 设置微信公众号的app secret.
-   */
-  private String secret;
-
-  /**
-   * 设置微信公众号的token.
-   */
-  private String token;
-
-  /**
-   * 设置微信公众号的EncodingAESKey.
-   */
-  private String aesKey;
-
-  /**
-   * 自定义host配置
-   */
-  private HostConfig hosts;
+  private String appId; //微信公众号 appId
+  private String secret; //微信公众号 secret
+  private String token; //微信公众号 token
+  private String aesKey; //微信公众号 aesKey
+  private WeChatHost hosts; //自定义 host 配置
 
   /**
    * 存储策略

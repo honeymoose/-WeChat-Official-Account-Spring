@@ -1,6 +1,6 @@
 package com.ossez.wechat.demo.config;
 
-import com.ossez.wechat.demo.enums.HttpClientType;
+import com.ossez.wechat.demo.common.enums.HttpClientType;
 import com.ossez.wechat.demo.properties.WeChatOfficialAccountProperties;
 import com.ossez.wechat.oa.api.WxMpService;
 import com.ossez.wechat.oa.api.impl.WxMpServiceHttpClientImpl;
