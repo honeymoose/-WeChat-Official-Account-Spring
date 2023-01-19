@@ -53,7 +53,7 @@ public class WeChatOfficialAccountProperties {
     /**
      * http客户端类型.
      */
-    private HttpClientType httpClientType = HttpClientType.HttpClient;
+    private HttpClientType httpClientType = HttpClientType.OK_HTTP;
 
     /**
      * http代理主机.

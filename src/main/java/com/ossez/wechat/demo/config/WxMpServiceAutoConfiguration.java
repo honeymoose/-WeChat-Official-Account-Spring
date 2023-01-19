@@ -2,11 +2,8 @@ package com.ossez.wechat.demo.config;
 
 import com.ossez.wechat.demo.common.enums.HttpClientType;
 import com.ossez.wechat.demo.properties.WeChatOfficialAccountProperties;
-import com.ossez.wechat.oa.api.WxMpService;
-import com.ossez.wechat.oa.api.impl.WxMpServiceHttpClientImpl;
-import com.ossez.wechat.oa.api.impl.WxMpServiceImpl;
-import com.ossez.wechat.oa.api.impl.WxMpServiceJoddHttpImpl;
-import com.ossez.wechat.oa.api.impl.WxMpServiceOkHttpImpl;
+import com.ossez.wechat.oa.api.WeChatOfficialAccountService;
+import com.ossez.wechat.oa.api.impl.WeChatOfficialAccountServiceOkHttp;
 import com.ossez.wechat.oa.config.WxMpConfigStorage;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.context.annotation.Bean;
@@ -22,42 +19,12 @@ public class WxMpServiceAutoConfiguration {
 
   @Bean
   @ConditionalOnMissingBean
-  public WxMpService wxMpService(WxMpConfigStorage configStorage, WeChatOfficialAccountProperties wxMpProperties) {
+  public WeChatOfficialAccountService weChatOfficialAccountService(WxMpConfigStorage configStorage, WeChatOfficialAccountProperties wxMpProperties) {
     HttpClientType httpClientType = wxMpProperties.getConfigStorage().getHttpClientType();
-    WxMpService wxMpService;
-    switch (httpClientType) {
-      case OkHttp:
-        wxMpService = newWxMpServiceOkHttpImpl();
-        break;
-      case JoddHttp:
-        wxMpService = newWxMpServiceJoddHttpImpl();
-        break;
-      case HttpClient:
-        wxMpService = newWxMpServiceHttpClientImpl();
-        break;
-      default:
-        wxMpService = newWxMpServiceImpl();
-        break;
-    }
+    WeChatOfficialAccountService weChatOfficialAccountService  =  new WeChatOfficialAccountServiceOkHttp();
 
-    wxMpService.setWxMpConfigStorage(configStorage);
-    return wxMpService;
-  }
-
-  private WxMpService newWxMpServiceImpl() {
-    return new WxMpServiceImpl();
-  }
-
-  private WxMpService newWxMpServiceHttpClientImpl() {
-    return new WxMpServiceHttpClientImpl();
-  }
-
-  private WxMpService newWxMpServiceOkHttpImpl() {
-    return new WxMpServiceOkHttpImpl();
-  }
-
-  private WxMpService newWxMpServiceJoddHttpImpl() {
-    return new WxMpServiceJoddHttpImpl();
+    weChatOfficialAccountService.setWxMpConfigStorage(configStorage);
+    return weChatOfficialAccountService;
   }
 
 }

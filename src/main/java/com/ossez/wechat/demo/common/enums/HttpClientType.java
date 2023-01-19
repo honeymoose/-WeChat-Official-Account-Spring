@@ -1,22 +1,10 @@
 package com.ossez.wechat.demo.common.enums;
 
 /**
- * httpclient类型.
- *
- * @author <a href="https://github.com/binarywang">Binary Wang</a>
- * created on  2020-08-30
+ * User different http client to make api call.
+ * We should only keep OK_HTTP, this enough for package
  */
 public enum HttpClientType {
-  /**
-   * HttpClient.
-   */
-  HttpClient,
-  /**
-   * OkHttp.
-   */
-  OkHttp,
-  /**
-   * JoddHttp.
-   */
-  JoddHttp,
+    HTTP_CLIENT, OK_HTTP
+
 }

@@ -1,8 +1,9 @@
 package com.ossez.wechat.demo.controller;
 
-import lombok.extern.slf4j.Slf4j;
-import com.ossez.wechat.oa.api.WxMpService;
 import com.ossez.wechat.common.exception.WxErrorException;
+
+import com.ossez.wechat.oa.api.WeChatOfficialAccountService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,8 +20,12 @@ import org.springframework.web.bind.annotation.RestController;
 @Slf4j
 public class WeChatController {
 
+    private final WeChatOfficialAccountService weChatOfficialAccountService;
+
     @Autowired
-    private WxMpService mpService;
+    public WeChatController(WeChatOfficialAccountService weChatOfficialAccountService) {
+        this.weChatOfficialAccountService = weChatOfficialAccountService;
+    }
 
     /**
      * Get weChat access token
@@ -32,7 +37,7 @@ public class WeChatController {
     @ResponseBody
     public String getAccessToken() throws WxErrorException {
 
-        return this.mpService.getAccessToken();
+        return weChatOfficialAccountService.getAccessToken();
     }
 
 
