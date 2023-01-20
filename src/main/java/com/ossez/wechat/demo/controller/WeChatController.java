@@ -2,6 +2,8 @@ package com.ossez.wechat.demo.controller;
 
 import com.ossez.wechat.common.exception.WxErrorException;
 
+import com.ossez.wechat.demo.data.repository.redis.StudentRepository;
+import com.ossez.wechat.demo.model.entity.Student;
 import com.ossez.wechat.oa.api.WeChatOfficialAccountService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,10 +23,12 @@ import org.springframework.web.bind.annotation.RestController;
 public class WeChatController {
 
     private final WeChatOfficialAccountService weChatOfficialAccountService;
+    private final StudentRepository studentRepository;
 
     @Autowired
-    public WeChatController(WeChatOfficialAccountService weChatOfficialAccountService) {
+    public WeChatController(WeChatOfficialAccountService weChatOfficialAccountService, StudentRepository studentRepository) {
         this.weChatOfficialAccountService = weChatOfficialAccountService;
+        this.studentRepository = studentRepository;
     }
 
     /**
@@ -37,7 +41,11 @@ public class WeChatController {
     @ResponseBody
     public String getAccessToken() throws WxErrorException {
 
-        return weChatOfficialAccountService.getAccessToken();
+        Student student = new Student(
+                "Eng2015001", "John Doe", Student.Gender.MALE, 1);
+        studentRepository.save(student);
+
+        return weChatOfficialAccountService.getAccessToken(true);
     }
 
 
