@@ -41,11 +41,12 @@ public class WeChatController {
     @ResponseBody
     public String getAccessToken() throws WxErrorException {
 
-        Student student = new Student(
-                "Eng2015001", "John Doe", Student.Gender.MALE, 1);
-        studentRepository.save(student);
 
-        return weChatOfficialAccountService.getAccessToken(true);
+    weChatOfficialAccountService.getAccessToken(true);
+
+
+
+        return "ss" ;
     }
 
 

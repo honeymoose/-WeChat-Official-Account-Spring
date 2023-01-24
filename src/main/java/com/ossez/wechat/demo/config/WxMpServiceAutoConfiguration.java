@@ -4,7 +4,7 @@ import com.ossez.wechat.demo.common.enums.HttpClientType;
 import com.ossez.wechat.demo.properties.WeChatOfficialAccountProperties;
 import com.ossez.wechat.oa.api.WeChatOfficialAccountService;
 import com.ossez.wechat.oa.api.impl.okhttp.WeChatOfficialAccountServiceOkHttp;
-import com.ossez.wechat.oa.config.WxMpConfigStorage;
+import com.ossez.wechat.oa.config.ConfigStorage;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -19,7 +19,7 @@ public class WxMpServiceAutoConfiguration {
 
   @Bean
   @ConditionalOnMissingBean
-  public WeChatOfficialAccountService weChatOfficialAccountService(WxMpConfigStorage configStorage, WeChatOfficialAccountProperties wxMpProperties) {
+  public WeChatOfficialAccountService weChatOfficialAccountService(ConfigStorage configStorage, WeChatOfficialAccountProperties wxMpProperties) {
     HttpClientType httpClientType = wxMpProperties.getConfigStorage().getHttpClientType();
     WeChatOfficialAccountService weChatOfficialAccountService  =  new WeChatOfficialAccountServiceOkHttp();
 
