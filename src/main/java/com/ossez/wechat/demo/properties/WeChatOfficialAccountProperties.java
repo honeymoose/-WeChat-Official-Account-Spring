@@ -1,8 +1,8 @@
 package com.ossez.wechat.demo.properties;
 
 
-import com.ossez.wechat.demo.common.enums.HttpClientType;
-import com.ossez.wechat.demo.common.enums.StorageType;
+import com.ossez.wechat.demo.common.enums.HttpClientCategory;
+import com.ossez.wechat.demo.common.enums.StorageCategory;
 import com.ossez.wechat.demo.model.entity.WeChatHost;
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
@@ -10,7 +10,7 @@ import org.springframework.boot.context.properties.NestedConfigurationProperty;
 
 import java.io.Serializable;
 
-import static com.ossez.wechat.demo.common.enums.StorageType.Memory;
+import static com.ossez.wechat.demo.common.enums.StorageCategory.MEM;
 
 /**
  * WeChat Official Account Config
@@ -37,7 +37,7 @@ public class WeChatOfficialAccountProperties {
     /**
      * 存储类型.
      */
-    private StorageType type = Memory;
+    private StorageCategory type = MEM;
 
     /**
      * 指定key前缀.
@@ -53,7 +53,7 @@ public class WeChatOfficialAccountProperties {
     /**
      * http客户端类型.
      */
-    private HttpClientType httpClientType = HttpClientType.OK_HTTP;
+    private HttpClientCategory httpClientCategory = HttpClientCategory.OK_HTTP;
 
     /**
      * http代理主机.

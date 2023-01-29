@@ -9,8 +9,14 @@
     <file url="file://$PROJECT_DIR$/../WeChat-J/oa/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/../WeChat-J/open/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/../WeChat-J/open/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../WeChat-J/pay/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../WeChat-J/pay/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/../WeChat-J/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/../WeChat-J/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../WeChat-J/wecom/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../WeChat-J/wecom/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../WeChat-J/work/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../WeChat-J/work/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
   </component>
 </project>

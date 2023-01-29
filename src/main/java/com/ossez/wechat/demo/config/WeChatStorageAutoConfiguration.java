@@ -1,17 +1,15 @@
 package com.ossez.wechat.demo.config;
 
-import com.ossez.wechat.demo.common.enums.StorageType;
+import com.ossez.wechat.demo.common.enums.StorageCategory;
 import com.ossez.wechat.demo.properties.RedisProperties;
 import com.ossez.wechat.demo.properties.WeChatOfficialAccountProperties;
 import com.google.common.collect.Sets;
 import com.ossez.wechat.oa.config.ConfigStorage;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import com.ossez.wechat.common.redis.JedisWxRedisOps;
 import com.ossez.wechat.common.redis.RedisTemplateWxRedisOps;
 import com.ossez.wechat.common.redis.WxRedisOps;
 import com.ossez.wechat.oa.config.WxMpHostConfig;
-import com.ossez.wechat.oa.config.ConfigStorage;
 import com.ossez.wechat.oa.config.DefaultConfigStorage;
 import com.ossez.wechat.oa.config.impl.RedisConfigStorage;
 import org.apache.commons.lang3.StringUtils;
@@ -35,7 +33,7 @@ import java.util.Set;
 @Slf4j
 @Configuration
 @RequiredArgsConstructor
-public class WxMpStorageAutoConfiguration {
+public class WeChatStorageAutoConfiguration {
     private final ApplicationContext applicationContext;
 
     private final WeChatOfficialAccountProperties wxMpProperties;
@@ -43,10 +41,10 @@ public class WxMpStorageAutoConfiguration {
     @Bean
     @ConditionalOnMissingBean(ConfigStorage.class)
     public ConfigStorage wxMpConfigStorage() {
-        StorageType type = wxMpProperties.getConfigStorage().getType();
+        StorageCategory type = wxMpProperties.getConfigStorage().getType();
         ConfigStorage config;
         switch (type) {
-            case RedisTemplate:
+            case REDIS:
                 config = redisTemplateConfigStorage();
                 break;
             default:

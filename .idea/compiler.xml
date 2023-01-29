@@ -8,12 +8,17 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="wechat-j-open" />
-        <module name="wechat-official-account-spring" />
+        <module name="wechat-j-pay" />
         <module name="wechat-j-common" />
+        <module name="wechat-j-work" />
+        <module name="wechat-official-account-spring" />
         <module name="wechat-j-mp" />
         <module name="wechat-j-oa" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="wechat-j-wecom" target="11" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
