@@ -1,10 +1,10 @@
 package com.ossez.wechat.demo.config;
 
+import com.ossez.wechat.common.config.ConfigStorage;
 import com.ossez.wechat.demo.common.enums.HttpClientCategory;
 import com.ossez.wechat.demo.properties.WeChatOfficialAccountProperties;
 import com.ossez.wechat.oa.api.WeChatOfficialAccountService;
 import com.ossez.wechat.oa.api.impl.okhttp.WeChatOfficialAccountServiceOkHttp;
-import com.ossez.wechat.oa.config.ConfigStorage;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
@@ -28,7 +28,7 @@ public class WeChatConfiguration {
     @Bean
     @ConditionalOnMissingBean
     public WeChatOfficialAccountService weChatOfficialAccountService(ConfigStorage configStorage, WeChatOfficialAccountProperties weChatOfficialAccountProperties) {
-        HttpClientCategory httpClientCategory = weChatOfficialAccountProperties.getConfigStorage().getHttpClientCategory();
+        HttpClientCategory httpClientCategory = weChatOfficialAccountProperties.getWeChatDataStorage().getHttpClientCategory();
         WeChatOfficialAccountService weChatOfficialAccountService = new WeChatOfficialAccountServiceOkHttp();
 
         weChatOfficialAccountService.setWxMpConfigStorage(configStorage);

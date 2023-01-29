@@ -40,6 +40,7 @@ public class WeChatController {
     @GetMapping("/token")
     @ResponseBody
     public String getAccessToken() throws WxErrorException {
+        log.debug("Get access token from WeChat");
         return weChatOfficialAccountService.getAccessToken(true);
     }
 
