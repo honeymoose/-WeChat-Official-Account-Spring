@@ -29,9 +29,10 @@ class DateTest {
         Map<Integer, Boolean> map1 = reqIds.stream().collect(Collectors.toMap(Function.identity(), item -> reqs.contains(item)));
         Map<Integer, Boolean> map2 = reqIds.stream().collect(Collectors.toMap(Function.identity(), reqs::contains));
 
-        log.debug("Map Size {}",map2);
+        log.debug("Map Size {}",11+20);
     }
 
 
 }
+
 

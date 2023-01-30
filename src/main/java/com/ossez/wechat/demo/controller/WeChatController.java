@@ -44,5 +44,11 @@ public class WeChatController {
         return weChatOfficialAccountService.getAccessToken(true);
     }
 
+    @GetMapping("/api_domain_ip")
+    @ResponseBody
+    public String getDomainIPs() throws WxErrorException {
+        log.debug("Get access token from WeChat");
+        return weChatOfficialAccountService.getDomainIPs();
+    }
 
 }
