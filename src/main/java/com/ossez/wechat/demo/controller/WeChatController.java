@@ -1,7 +1,8 @@
 package com.ossez.wechat.demo.controller;
 
 import com.ossez.wechat.common.exception.WxErrorException;
-
+import com.ossez.wechat.common.model.res.NetworkCheckResponse;
+import com.ossez.wechat.common.model.res.QueryQuotaResponse;
 import com.ossez.wechat.demo.data.repository.redis.StudentRepository;
 import com.ossez.wechat.oa.api.WeChatOfficialAccountService;
 import com.ossez.wechat.oa.api.impl.okhttp.WeChatPlatformService;
@@ -46,18 +47,25 @@ public class WeChatController {
         return weChatOfficialAccountService.getAccessToken(true);
     }
 
-    @GetMapping("/api_domain_ip")
+    @GetMapping("/ip")
     @ResponseBody
     public String getDomainIPs() throws WxErrorException {
         log.debug("Get access token from WeChat");
         return weChatPlatformService.getDomainIPs();
     }
 
-    @GetMapping("/network_check")
+    @GetMapping("/networkcheck")
     @ResponseBody
-    public String checkNetwork() throws WxErrorException {
+    public NetworkCheckResponse checkNetwork() throws WxErrorException {
         log.debug("Get access token from WeChat");
         return weChatPlatformService.checkNetwork();
+    }
+
+    @GetMapping("/query/quota")
+    @ResponseBody
+    public QueryQuotaResponse queryQuota() throws WxErrorException {
+        log.debug("Get access token from WeChat");
+        return weChatPlatformService.queryQuota();
     }
 
 }

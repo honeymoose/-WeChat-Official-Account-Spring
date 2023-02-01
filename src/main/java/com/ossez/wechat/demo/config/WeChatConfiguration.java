@@ -1,11 +1,13 @@
 package com.ossez.wechat.demo.config;
 
 import com.ossez.wechat.common.config.ConfigStorage;
+import com.ossez.wechat.common.exception.WxErrorException;
 import com.ossez.wechat.demo.common.enums.HttpClientCategory;
 import com.ossez.wechat.demo.properties.WeChatOfficialAccountProperties;
 import com.ossez.wechat.oa.api.WeChatOfficialAccountService;
 import com.ossez.wechat.oa.api.impl.okhttp.WeChatPlatformService;
 import com.ossez.wechat.oa.api.impl.okhttp.WeChatOfficialAccountServiceOkHttp;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
@@ -39,7 +41,14 @@ public class WeChatConfiguration {
     @Bean
     @ConditionalOnMissingBean
     public WeChatPlatformService weChatPlatformService(WeChatOfficialAccountService weChatOfficialAccountService) {
-        WeChatPlatformService weChatPlatformService = new WeChatPlatformService();
+        String accessToken = StringUtils.EMPTY;
+        try {
+            accessToken = weChatOfficialAccountService.getAccessToken();
+        } catch (WxErrorException e) {
+            e.printStackTrace();
+        }
+
+        WeChatPlatformService weChatPlatformService = new WeChatPlatformService(accessToken);
 
         weChatPlatformService.setWeChatOfficialAccountService(weChatOfficialAccountService);
         return weChatPlatformService;
