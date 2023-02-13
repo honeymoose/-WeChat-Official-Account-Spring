@@ -7,6 +7,7 @@ package com.ossez.wechat.demo.common.enums;
  *
  * @author YuCheng Hu
  */
+@Deprecated
 public enum StorageCategory {
     MEM, REDIS
 }

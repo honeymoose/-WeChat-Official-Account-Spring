@@ -4,6 +4,7 @@ import com.ossez.wechat.common.exception.WxErrorException;
 import com.ossez.wechat.common.model.res.NetworkCheckResponse;
 import com.ossez.wechat.common.model.res.QueryQuotaResponse;
 import com.ossez.wechat.demo.data.repository.redis.StudentRepository;
+import com.ossez.wechat.demo.service.WeChatService;
 import com.ossez.wechat.oa.api.WeChatOfficialAccountService;
 import com.ossez.wechat.oa.api.impl.okhttp.WeChatPlatformService;
 import lombok.extern.slf4j.Slf4j;
@@ -24,13 +25,13 @@ import org.springframework.web.bind.annotation.RestController;
 public class WeChatController {
 
     private final WeChatOfficialAccountService weChatOfficialAccountService;
-    private final WeChatPlatformService weChatPlatformService;
+    private final WeChatService weChatService;
     private final StudentRepository studentRepository;
 
     @Autowired
-    public WeChatController(WeChatOfficialAccountService weChatOfficialAccountService, WeChatPlatformService weChatPlatformService, StudentRepository studentRepository) {
+    public WeChatController(WeChatOfficialAccountService weChatOfficialAccountService, WeChatService weChatService, StudentRepository studentRepository) {
         this.weChatOfficialAccountService = weChatOfficialAccountService;
-        this.weChatPlatformService = weChatPlatformService;
+        this.weChatService = weChatService;
         this.studentRepository = studentRepository;
     }
 
@@ -51,21 +52,28 @@ public class WeChatController {
     @ResponseBody
     public String getDomainIPs() throws WxErrorException {
         log.debug("Get access token from WeChat");
-        return weChatPlatformService.getDomainIPs();
+        return weChatService.getDomainIPs();
     }
 
-    @GetMapping("/networkcheck")
-    @ResponseBody
-    public NetworkCheckResponse checkNetwork() throws WxErrorException {
-        log.debug("Get access token from WeChat");
-        return weChatPlatformService.checkNetwork();
-    }
-
+//    @GetMapping("/networkcheck")
+//    @ResponseBody
+//    public NetworkCheckResponse checkNetwork() throws WxErrorException {
+//        log.debug("Get access token from WeChat");
+//        return weChatPlatformService.checkNetwork();
+//    }
+//
     @GetMapping("/query/quota")
     @ResponseBody
     public QueryQuotaResponse queryQuota() throws WxErrorException {
         log.debug("Get access token from WeChat");
-        return weChatPlatformService.queryQuota();
+        return weChatService.queryQuota();
+    }
+
+    @GetMapping("/message/send")
+    @ResponseBody
+    public String sendMessage() throws WxErrorException {
+        log.debug("Get access token from WeChat");
+        return weChatService.sendMessage();
     }
 
 }
